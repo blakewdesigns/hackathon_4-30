@@ -17,7 +17,6 @@ function renderTodos() {
     todos.forEach(todo =>{
         li = document.createElement("li")
         li.innerText = todo.description
-
         ul.appendChild(li)
     })
 }
