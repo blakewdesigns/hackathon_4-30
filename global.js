@@ -9,11 +9,12 @@ let todos = [
 
 btn = document.querySelector("#btn")
 field = document.querySelector('#input')
-ul = document.querySelector("#list")
+ul = document.querySelector("#ulEl")
 
 renderTodos()
 
 function renderTodos() {
+    ul.innerHTML = ""
     todos.forEach(todo =>{
         li = document.createElement("li")
         li.innerText = todo.description
@@ -24,8 +25,10 @@ function renderTodos() {
 btn.addEventListener('click', addTodo)
 
 function addTodo() {
-    field = document.querySelector('#input')
-    li = document.createElement('li')
+    console.log(field.value)
     newTodo = {description: field.value}
     todos.push(newTodo)
+    console.log(todos)
+    renderTodos()
+    field.value = ""
 }
